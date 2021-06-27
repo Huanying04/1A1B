@@ -11,6 +11,12 @@
         <title>4digits</title>
     </head>
     <body>
+        <div title style="text-align:center">
+            <div id="title" class="title">猜數字</div>
+            <div id="desc" class="desc">==規則==<br>系統會隨機產生一組數字不重複的4位數字，你必須這組數字。<br>
+                每輸入一組數字，系統就會給予提示。提示的格式為XAYB。<br>
+                其中X表示位置正確的數的個數，而Y表示數字正確而位置不對的數的個數。</div>
+        </div>
         <div id="buttons" style="text-align:center">
             <button type="button" id="one" onclick="dis('one')">1</button>
             <button type="button" id="two" onclick="dis('two')">2</button>
@@ -26,7 +32,7 @@
             <button type="button" id="correct" onclick="correct()">○</button>
         </div>
         <div class="panel panel-default">
-            <div id="guess" style="text-align:center;font-size:48px;" class="panel-body">‌</div>
+            <div id="guess" style="text-align:center;font-size:42px;" class="panel-body">‌</div>
         </div>
                 <div id="history" style="text-align:center;font-size:36px;"></div>
         <div id="reset-button" style="text-align:center">

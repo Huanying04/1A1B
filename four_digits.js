@@ -38,7 +38,7 @@ function clear_input() {
 function correct() {
     if (digits.length == 4 && !finish){
         if (digits == answer) {
-            document.getElementById("history").innerHTML += digits + "        <span style=\"color:green\">4A0B</span><br>";
+            document.getElementById("history").innerHTML += digits + "    <span style=\"color:green\">4A0B</span><br>";
             document.getElementById("reset").style.visibility = "visible";
             finish = true;
             return
@@ -59,7 +59,7 @@ function correct() {
                 }
             }
         }
-        document.getElementById("history").innerHTML += digits + "        <span style=\"color:red\">" + a + "A" + b + "B</span><br>";
+        document.getElementById("history").innerHTML += digits + "    <span style=\"color:red\">" + a + "A" + b + "B</span><br>";
         clear_input();
     }
 }
