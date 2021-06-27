@@ -3,12 +3,6 @@
 
 * {
     font-family: 'Bebas Neue', cursive;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 
 .title {
@@ -34,6 +28,13 @@ button {
     height: 65px;
     border-radius: 2px;
     transition-duration: 0.025s;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 button:hover {
