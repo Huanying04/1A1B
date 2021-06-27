@@ -10,8 +10,6 @@ for (var i = 0; i < 4; i++) {
     pool.splice(index, 1);
 }
 
-console.log(answer);
-
 function dis(name) {
     if (digits.length < 4){
         document.getElementById(name).style.visibility = "hidden";
