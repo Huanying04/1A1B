@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>4digits</title>
+    </head>
+    <body>
+        <div id="buttons" style="text-align:center">
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="one" onclick="dis('one')">1</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="two" onclick="dis('two')">2</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="three" onclick="dis('three')">3</button><br>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="four" onclick="dis('four')">4</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="five" onclick="dis('five')">5</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="six" onclick="dis('six')">6</button><br>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="seven" onclick="dis('seven')">7</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="eight" onclick="dis('eight')">8</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="nine" onclick="dis('nine')">9</button><br>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="clear" onclick="clear_input()">×</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="zero" onclick="dis('zero')">0</button>
+            <button type="button" style="width:40px;height:40px;font-size:20px;" id="correct" onclick="correct()">○</button>
+        </div>
+        <div id="guess" style="text-align:center;font-size:48px;"></div>
+        <div id="history" style="text-align:center;font-size:24px;"></div>
+        <div id="reset-button" style="text-align:center">
+            <button type="button" style="width:240px;height:50px;font-size:30px;visibility:hidden;" id="reset" onclick="reset()">再玩一次！</button>
+        </div>
+        <script src="four_digits.js"></script>
+    </body>
+</html>
