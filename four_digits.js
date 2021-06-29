@@ -36,7 +36,7 @@ function clear_input() {
 }
 
 function correct() {
-    if (digits.length == 4 && !finish){
+    if (digits.length == 4 && !finish) {
         if (digits == answer) {
             document.getElementById("history").innerHTML += digits + "    <span style=\"color:green\">4A0B</span><br>";
             document.getElementById("reset").style.visibility = "visible";
@@ -61,6 +61,8 @@ function correct() {
         }
         document.getElementById("history").innerHTML += digits + "    <span style=\"color:red\">" + a + "A" + b + "B</span><br>";
         clear_input();
+    }else {
+        showToast("必須輸入4位數字", '#f24d41');
     }
 }
 
@@ -114,4 +116,20 @@ function toNum(str) {
     if (str == 'zero') {
         return 0;
     }
+}
+
+function showToast(content, color) {
+    var toast = document.createElement("toast");
+    toast.id = "toast";
+    //var x = document.getElementById("toast");
+    toast.innerHTML = content;
+    toast.className = "show";
+    var element = document.getElementById("toasts");
+    element.append(toast);
+    toast.style.backgroundColor = color==undefined?"#333":color;
+    setTimeout(function(){
+        toast.className = toast.className.replace("show", "");
+        toast.remove();
+    }, 3000);
+    
 }

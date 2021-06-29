@@ -13,7 +13,8 @@
     <body>
         <div title style="text-align:center">
             <div id="title" class="title">猜數字</div>
-            <div id="desc" class="desc">==規則==<br>系統會隨機產生一組數字不重複的4位數字，你必須這組數字。<br>
+            <div id = "subtitle" class="desc subt">———規則———</div>
+            <div id="desc" class="desc">系統會隨機產生一組數字不重複的4位數字，你必須這組數字。<br>
                 每輸入一組數字，系統就會給予提示。提示的格式為XAYB。<br>
                 其中X表示位置正確的數的個數，而Y表示數字正確而位置不對的數的個數。</div>
         </div>
@@ -38,6 +39,7 @@
         <div id="reset-button" style="text-align:center">
             <button type="button" style="visibility:hidden;" class="button btn-play-again" id="reset" onclick="reset()">再玩一次！</button>
         </div>
+        <div id="toasts"></div>
         <script src="four_digits.js"></script>
     </body>
 </html>
