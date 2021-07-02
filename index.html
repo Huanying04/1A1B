@@ -11,10 +11,23 @@
         <title>4digits</title>
     </head>
     <body>
+        <div id="settings" style="text-align: right;">
+            <span id="hint">數字量：</span>
+            <select id="len">
+                <option id="3">3</option>
+                <option id="4">4</option>
+                <option id="5">5</option>
+                <option id="6">6</option>
+                <option id="7">7</option>
+                <option id="8">8</option>
+                <option id="9">9</option>
+                <option id="10">10</option>
+            </select>
+        </div>
         <div title style="text-align:center">
             <div id="title" class="title">猜數字</div>
             <div id = "subtitle" class="desc subt">———規則———</div>
-            <div id="desc" class="desc">系統會隨機產生一組數字不重複的4位數字，你必須這組數字。<br>
+            <div id="desc" class="desc">系統會隨機產生一組數字不重複的$位數字，你必須這組數字。<br>
                 每輸入一組數字，系統就會給予提示。提示的格式為XAYB。<br>
                 其中X表示位置正確的數的個數，而Y表示數字正確而位置不對的數的個數。</div>
         </div>

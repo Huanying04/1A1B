@@ -3,6 +3,14 @@ var answer = '';
 var pool = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var finish = false;
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var len = urlParams.get('len') >= 3 && urlParams.get('len') <= 10 ? urlParams.get('len') : 4;
+
+document.getElementById("len").selectedIndex = len - 3;
+
+document.getElementById("desc").innerText = document.getElementById("desc").innerText.replace('$', len);
+
 document.getElementById("one").onclick = function(){dis('one');};
 document.getElementById("two").onclick = function(){dis('two');};
 document.getElementById("three").onclick = function(){dis('three');};
@@ -16,7 +24,12 @@ document.getElementById("zero").onclick = function(){dis('zero');};
 document.getElementById("clear").onclick = function(){clear_input();};
 document.getElementById("correct").onclick = function(){correct();};
 
-for (var i = 0; i < 4; i++) {
+document.getElementById("len").onchange = function(){
+    urlParams.set('len', document.getElementById("len").value);
+    window.location.href=location.protocol + '//' + location.host + location.pathname + '?' + urlParams.toString();
+};
+
+for (var i = 0; i < len; i++) {
     var j = pool[Math.floor(Math.random() * pool.length)];
     answer += j;
     var index = pool.indexOf(j);
@@ -24,7 +37,7 @@ for (var i = 0; i < 4; i++) {
 }
 
 function dis(name) {
-    if (digits.length < 4){
+    if (digits.length < len){
         document.getElementById(name).style.visibility = "hidden";
         digits += toNum(name);
         document.getElementById("guess").innerHTML = digits;
@@ -49,21 +62,21 @@ function clear_input() {
 }
 
 function correct() {
-    if (digits.length == 4 && !finish) {
+    if (digits.length == len && !finish) {
         if (digits == answer) {
-            document.getElementById("history").innerHTML += digits + "    <span style=\"color:green\">4A0B</span><br>";
+            document.getElementById("history").innerHTML += digits + "    <span style=\"color:green\">" + len + "A" + 0 + "B</span><br>";
             document.getElementById("reset").style.visibility = "visible";
             finish = true;
             return
         }
 
         var a = 0, b = 0;
-        for (var i = 0; i < 4; i++) {
-            var num = Math.floor(digits % Math.pow(10, 4 - i) / (Math.pow(10, 4 - i)/10));
+        for (var i = 0; i < len; i++) {
+            var num = Math.floor(digits % Math.pow(10, len - i) / (Math.pow(10, len - i)/10));
             if (answer[i] == num) {
                 a++;
             }
-            for (var k = 0; k < 4; k++) {
+            for (var k = 0; k < len; k++) {
                 if (k == i) {
                     continue;
                 }
@@ -74,8 +87,8 @@ function correct() {
         }
         document.getElementById("history").innerHTML += digits + "    <span style=\"color:red\">" + a + "A" + b + "B</span><br>";
         clear_input();
-    }else {
-        showToast("必須輸入4位數字", '#f24d41');
+    }else if (!finish) {
+        showToast("必須輸入"+len+"位數字", '#f24d41');
     }
 }
 
@@ -85,7 +98,7 @@ function reset() {
     pool = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     finish = false;
     
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < len; i++) {
         var j = pool[Math.floor(Math.random() * pool.length)];
         answer += j;
         var index = pool.indexOf(j);

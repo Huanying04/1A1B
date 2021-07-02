@@ -58,6 +58,10 @@ button:active {
     font-weight: 700;
 }
 
+#settings * {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
 #toast {
     visibility: hidden;
     min-width: 350px;
@@ -101,3 +105,10 @@ button:active {
     from {bottom: 50%; opacity: 1;}
     to {bottom: 45%; opacity: 0;}
 }
+
+@media screen and (max-width: 600px) {
+    .desc br {
+        content: " ";
+        display: none;
+    }
+  }
